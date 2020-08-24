@@ -1,7 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/categories_screen.dart';
+import 'recipes.dart';
+import './categories_screen.dart';
 
 void main() {
-  runApp(Categories_Screen());
+  runApp(MyApp());
 }
 
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+        accentColor: Colors.redAccent
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Meals App'),
+          backgroundColor: Colors.redAccent,
+        ),
+        body: Categories_Screen(),
+      ),
+      routes: {
+        '/recipes' : (context) => Recipes()
+      },
+    );
+  }
+}

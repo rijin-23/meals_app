@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
-class Categories_class{
+class Category{
   final String id;
   final String title;
-  final Color colors;
+  final Color color;
 
-  const Categories_class({
+  const Category({
     @required this.id,
     @required this.title,
-    this.colors = Colors.red,
+    this.color = Colors.red,
     });
 }
