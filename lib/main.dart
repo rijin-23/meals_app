@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'recipes.dart';
-import './categories_screen.dart';
+import 'screens/recipes_screen.dart';
+import 'screens/categories_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,10 +10,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-        accentColor: Colors.redAccent
-      ),
+      theme:
+          ThemeData(primarySwatch: Colors.red, accentColor: Colors.redAccent),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Meals App'),
@@ -21,9 +19,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Categories_Screen(),
       ),
-      routes: {
-        '/recipes' : (context) => Recipes()
-      },
+      routes: {'/recipes': (context) => Recipes_Screen()},
     );
   }
 }
