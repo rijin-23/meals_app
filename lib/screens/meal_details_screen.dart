@@ -15,6 +15,9 @@ class Meal_Details_Screen extends StatelessWidget {
         child: Column(
           children: [
             Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+              ),
               height: 250,
               width: double.infinity,
               child: Image.network(
@@ -51,22 +54,32 @@ class Meal_Details_Screen extends StatelessWidget {
                 itemCount: selectedMeal.ingredients.length,
               ),
             ),
+            SizedBox(
+              height: 10,
+            ),
             Container(
               margin: EdgeInsets.symmetric(vertical: 10),
               child: Text(
                 'Steps',
                 style: TextStyle(
-                    color: Theme.of(context).accentColor, fontSize: 20),
+                    color: Theme.of(context).accentColor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
               ),
             ),
             Container(
               padding: EdgeInsets.all(5),
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.pinkAccent),
-                  borderRadius: BorderRadius.circular(10)),
-              margin: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-              height: 250,
+                border: Border(
+                    top: BorderSide(
+                        width: 1, color: Theme.of(context).accentColor),
+                    bottom: BorderSide(
+                        width: 1, color: Theme.of(context).accentColor)),
+              ),
+              //height: 600,
               child: ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
                   return Column(
                     children: [

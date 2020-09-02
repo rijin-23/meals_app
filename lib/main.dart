@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+
+import 'package:meals_app/screens/tabScreen.dart';
 import 'screens/meal_details_screen.dart';
 import 'screens/recipes_screen.dart';
-import 'screens/categories_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,13 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme:
           ThemeData(primarySwatch: Colors.red, accentColor: Colors.redAccent),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Meals App'),
-          backgroundColor: Colors.redAccent,
-        ),
-        body: Categories_Screen(),
-      ),
+      home: TabScreen(),
       routes: {
         '/recipes': (context) => Recipes_Screen(),
         '/meal_details': (context) => Meal_Details_Screen()
