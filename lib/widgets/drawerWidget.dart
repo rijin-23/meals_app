@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:meals_app/screens/filter_screen.dart';
-import 'package:meals_app/screens/tabScreen.dart';
-
 class DrawerWidget extends StatelessWidget {
   Widget buildListTile(String title, IconData icon, Function tap) {
     return ListTile(

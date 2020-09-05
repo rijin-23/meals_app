@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/models/meal.dart';
 import 'item_screen.dart';
-import '../widgets/dummy_data.dart';
+//import '../widgets/dummy_data.dart';
 
 // ignore: camel_case_types
 class Recipes_Screen extends StatelessWidget {
+  List<Meal> receivedMeal;
+  Recipes_Screen(this.receivedMeal);
   @override
   Widget build(BuildContext context) {
     final Map receivedArgs = ModalRoute.of(context).settings.arguments;
     final title = receivedArgs['title'];
     final id = receivedArgs['id'];
-    final categoryMeals = DUMMY_MEALS.where((meal) {
+    final categoryMeals = receivedMeal.where((meal) {
       return meal.categories.contains(id);
     }).toList();
 

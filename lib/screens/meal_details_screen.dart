@@ -3,6 +3,10 @@ import 'package:meals_app/widgets/dummy_data.dart';
 
 // ignore: camel_case_types
 class Meal_Details_Screen extends StatelessWidget {
+  final Function setFavorite;
+  final Function isFav;
+  Meal_Details_Screen(this.setFavorite, this.isFav);
+
   @override
   Widget build(BuildContext context) {
     final String argsId = ModalRoute.of(context).settings.arguments;
@@ -105,6 +109,9 @@ class Meal_Details_Screen extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () => setFavorite(argsId),
+          child: Icon(isFav(argsId) ? Icons.favorite_border : Icons.favorite)),
     );
   }
 }
